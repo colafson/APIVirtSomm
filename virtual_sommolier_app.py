@@ -16,10 +16,10 @@ def index():
 @app.route("/predict", methods=["GET"])
 def predict():
     #return prediction as a json response (dictionary)
-    country = requests.args.get("country", "")
-    province = requests.args.get("province", "")
-    price = requests.args.get("price", "")
-    variety = requests.args.get("variety", "")
+    country = request.args.get("country", "")
+    province = request.args.get("province", "")
+    price = request.args.get("price", "")
+    variety = request.args.get("variety", "")
 
     prediction = predict_interviews_well([country, province, price, variety])
 
