@@ -17,11 +17,11 @@ def index():
 def predict():
     #return prediction as a json response (dictionary)
     country = requests.args.get("country", "")
-    price = requests.args.get("price", "")
     province = requests.args.get("province", "")
+    price = requests.args.get("price", "")
     variety = requests.args.get("variety", "")
 
-    prediction = predict_interviews_well([country, price, province, variety])
+    prediction = predict_interviews_well([country, province, price, variety])
 
     if prediction is not None:
         result = {"prediction": prediction}
